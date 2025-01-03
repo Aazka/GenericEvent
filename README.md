@@ -1,4 +1,7 @@
 Advance Generic Event System, to use it 
+public GameEventsController OnGameStartEvent;
+
+
 
 Example:
 public class GameSerive: MonoBehhaviour
