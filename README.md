@@ -1,35 +1,27 @@
 Advance Generic Event System, to use it 
-public GameEventsController OnGameStartEvent;
-
 
 
 Example:
-public class GameSerive: MonoBehhaviour
-{
-    public GameEventsController OnGameStartEvent;
-    public GameEventsController<float> ScoreAdding;
-    void Start()
-    {
-        OnGameStartEvent=new GameEventsController;
-        ScoreAdding=new GameEventsController<float>;
-    }
-}
-// GameStartEvent
-public class EnemyAI: MonoBehhaviour
-{
-    void OnEnable()
-    {
-        GameSerive.Instance.OnGameStartEvent.AddListner(StartAI);
-    }
-    void OnDisable()
-    {
-        GameSerive.Instance.OnGameStartEvent.RemoveListner(StartAI);
-    }
-    void StartAI(){}
-}
+//Create
 
-// Invoke
-Simply Invoke
+public GameEventsController OnGameStartEvent;
+
+public GameEventsController<float> ScoreAdding;
+
+//Initilizee 
+
+OnGameStartEvent=new GameEventsController;
+
+ScoreAdding=new GameEventsController<float>;
+
+//Listner Add and Remove
+
+GameSerive.Instance.OnGameStartEvent.AddListner(StartAI);
+
+GameSerive.Instance.OnGameStartEvent.RemoveListner(StartAI);
+
+//Invoke
+
 GameSerive.Instance.OnGameStartEvent.Invoke();
-GameSerive.Instance.ScoreAdding.Invoke(4.5f);
 
+GameSerive.Instance.ScoreAdding.Invoke(4.5f);
